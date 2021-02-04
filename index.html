@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Modulo 3</title>
+    
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- Font Roboto Mono -->
+    <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- Header -->
+    <div class="container-fluid text-center bg-info text-white p-5">
+        <h1 class="h1">EFECTOS Y EVENTOS JQUERY</h1>
+        <h2 class="h2">Ejercicio final modulo 3</h2>
+    </div>
+
+    
+    <div class="container">
+        <!-- Menú hamburguesa -->
+        <input type="checkbox" id="menu">
+        <label for="menu"><i class="fas fa-bars fa-2x p-3 text-info"></i></label>
+        <!-- Lista de las tabs -->
+        <ul class="nav nav-tabs nav-fill flex-sm-row" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#data" role="tab" aria-controls="home" aria-selected="true">data</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#add" role="tab" aria-controls="profile" aria-selected="false">addClass</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#slidetoggle" role="tab" aria-controls="contact" aria-selected="false">slideToggle</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#append" role="tab" aria-controls="contact" aria-selected="false">append</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#val" role="tab" aria-controls="contact" aria-selected="false">val</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#fade" role="tab" aria-controls="contact" aria-selected="false">fadeIn fadeOut</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#focus" role="tab" aria-controls="contact" aria-selected="false">focus</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#hide" role="tab" aria-controls="contact" aria-selected="false">hide show</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#slide" role="tab" aria-controls="contact" aria-selected="false">slideUp slideDown</a>
+            </li>
+        </ul>
+
+        <!-- Contenido -->
+        <div class="tab-content" id="myTabContent">
+            <!-- data -->
+            <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="home-tab">
+                <div><h1 class="h1 text-center p-3">Función data</h1></div>
+                <div class="card border-info data-card m-auto">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title text-info">Texto de ejemplo</h5>
+                        <p class="card-text">Este es un párrafo de ejemplo, ingresa una palabra o texto en la barra "data"<br>
+                        luego presiona el botón "obtener datos" para que queden almacenados mediante la función data,<br>
+                        luego presiona el botón "adjuntar datos" para agregarlos al final de este párrafo.<br>
+                        </p>
+                        <p class="agregar-data"></p>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-default">data</span>
+                        </div>
+                        <input type="text" class="form-control input-data" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
+                      <a href="#" class="btn btn-info get-data">Obtener datos</a>
+                      <a href="#" class="btn btn-info add-data">Adjuntar datos</a>
+                    </div>
+                </div>
+            </div>
+            <!-- addClass-->
+            <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="profile-tab">
+                <div><h1 class="h1 text-center p-3">Función addClass</h1></div>
+                <div class="card-group">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title rojo">Ejemplo 1</h5>
+                        <p class="card-text rojo">Eiusmod officia cillum enim voluptate enim minim. Commodo velit commodo 
+                            aliqua irure fugiat consectetur officia voluptate duis aute esse ea irure. Aliquip consequat 
+                            pariatur mollit esse ipsum voluptate ex tempor.</p>
+                        <p class="card-text"><small class="rojo">Presiona el botón para cambiar el color del texto.</small></p>
+                        <button type="button" class="btn btn-danger addrojo">Texto rojo</button>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body azul">
+                        <h5 class="card-title blanco">Ejemplo 2</h5>
+                        <p class="card-text blanco">Eiusmod officia cillum enim voluptate enim minim. Commodo velit commodo 
+                            aliqua irure fugiat consectetur officia voluptate duis aute esse ea irure. Aliquip consequat 
+                            pariatur mollit esse ipsum voluptate ex tempor.</p>
+                        <p class="card-text"><small class="blanco">Presiona el botón para cambiar el fondo</small></p>
+                        <button type="button" class="btn btn-primary addblue">Fondo azul</button>
+                      </div>
+                    </div>
+                    <div class="card amarillo">
+                      <div class="card-body">
+                        <h5 class="card-title">Ejemplo 3</h5>
+                        <p class="card-text agrandar">Eiusmod officia cillum enim voluptate enim minim. Commodo velit commodo 
+                            aliqua irure fugiat consectetur officia voluptate duis aute esse ea irure. Aliquip consequat 
+                            pariatur mollit esse ipsum voluptate ex tempor.</p>
+                        <p class="card-text"><small class="">Presiona para agrandar el texto y cambiar el color</small></p>
+                        <button type="button" class="btn btn-warning addyellow">Borde amarillo</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- slideToggle -->
+            <div class="tab-pane fade" id="slidetoggle" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función slideToggle</h1></div>
+                <div class="card img-toggle m-auto">
+                    <img src="/assets/img/toggle.jpg" class="card-img-top atardecer" alt="aqui va la imagen">
+                    <div class="card-body">
+                      <p class="card-text">Presiona para activar el efecto slidetoggle</p>
+                      <a href="#" class="btn btn-primary toggle">Esconde/muestra la imagen</a>
+                    </div>
+                </div>
+            </div>
+            <!-- append -->
+            <div class="tab-pane fade" id="append" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función append</h1></div>
+                <div class="container row">
+                    <div class="card border-success mx-auto" style="width: 30rem;">
+                        <div class="card-header">Append</div>
+                        <div class="card-body text-success">
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea class="form-control append-texto" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe aquí"></textarea>
+                          </div>
+                          <p class="card-text">Presiona el botón para agregar el texto.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-success">
+                            <button type="button" class="btn btn-success boton-append">Agregar</button>
+                        </div>
+                    </div>
+
+                    <div class="card1 card border-success mx-auto" style="width: 30rem;">
+                        <div class="card-header">Ejemplo</div>
+                        <div class="card-body text-success cont-texto">
+                          <p class="card-text">Debajo de este párrafo se añadira el texto que escribiste en la primera columna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- val -->
+            <div class="tab-pane fade" id="val" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función val</h1></div>
+                <div class="container row">
+                    <div class="card border-success mx-auto" style="width: 30rem;">
+                        <div class="card-header">Formulario</div>
+                        <div class="card-body text-success">
+                            <form>
+                                <div class="form-group">
+                                  <label for="texto1">Nombre</label>
+                                  <input type="text" class="form-control" id="texto1" aria-describedby="nameHelp">
+                                  <small id="nameHelp" class="form-text text-muted">Ingresa tu nombre</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="texto2">Apellido</label>
+                                    <input type="text" class="form-control" id="texto2" aria-describedby="lnameHelp">
+                                    <small id="lnameHelp" class="form-text text-muted">Ingresa tu apellido</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="texto3">Ciudad</label>
+                                    <input type="text" class="form-control" id="texto3" aria-describedby="cityHelp">
+                                    <small id="cityHelp" class="form-text text-muted">Ingresa la ciudad en que vives</small>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary boton-val">Submit</button>
+                            </form>
+                          
+                        </div>
+                    </div>
+
+                    <div class="card border-success mx-auto" style="width: 30rem;">
+                        <div class="card-header">Aquí aparecerán tus datos</div>
+                        <div class="card-body text-success">
+                          <p class="val-texto"></p>  
+                        </div>
+                    </div>  
+                </div>
+
+            </div>
+            <!-- fadeIn / fadeOut-->
+            <div class="tab-pane fade" id="fade" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función fadeIn / fadeOut</h1></div>
+                <div class="card img-fade m-auto">
+                    <img src="/assets/img/fade.jpg" class="card-img-top earth" alt="aqui va la imagen">
+                    <div class="card-body">
+                      <p class="card-text">Presiona para activar el efecto fadeIn y fadeOut</p>
+                      <a href="#" class="btn btn-danger toggle in">fadeIn</a>
+                      <a href="#" class="btn btn-dark toggle out">fadeOut</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- focus -->
+            <div class="tab-pane fade" id="focus" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función focus</h1></div>
+                <div class="card focus-card m-auto">
+                    <div class="card-header">
+                      Formulario
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ejemplo</h5>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                            </div>
+                            <input type="text" class="form-control focus-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+                            </div>
+                            <input type="text" class="form-control focus-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-sm">Ciudad</span>
+                            </div>
+                            <input type="text" class="form-control focus-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <small class="text-muted">Presiona el botón para agregar un color de fondo a los input seleccionados con click mediante focus</small>
+                        <br>
+                        <button type="submit" class="boton-focus btn btn-warning my-3">Focus</button>
+                    </div>
+                </div>
+            </div>
+            <!-- hide / show -->
+            <div class="tab-pane fade" id="hide" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función hide / show</h1></div>
+                <div class="card border-danger hideshow-card m-auto">
+                    <div class="card-header">
+                      Texto de ejemplo
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Demostración de las funciones hide / show.</h5>
+                      <p class="card-text parrafo-hide">Este es un párrafo de ejemplo, cuando presiones el botón "hide", 
+                          desaparecerá, si presionas el botón "show", volverá a aparecer.<br>
+                          Este es un párrafo de ejemplo, cuando presiones el botón "hide", 
+                          desaparecerá, si presionas el botón "show", volverá a aparecer.<br>
+                          Este es un párrafo de ejemplo, cuando presiones el botón "hide", 
+                          desaparecerá, si presionas el botón "show", volverá a aparecer.<br>
+                        </p>
+                      <a href="#" class="btn btn-outline-danger btn-hide">hide</a>
+                      <a href="#" class="btn btn-danger btn-show">show</a>
+                    </div>
+                </div>
+            </div>
+            <!-- slideUp / slideDown -->
+            <div class="tab-pane fade" id="slide" role="tabpanel" aria-labelledby="contact-tab">
+                <div><h1 class="h1 text-center p-3">Función slideUp / slideDown</h1></div>
+                <div class="card border-dark slide-card m-auto">
+                    <div class="card-header">
+                      Texto de ejemplo
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Demostración de las funciones slideUp / slideDown.</h5>
+                      <p class="card-text parrafo-slide">Este es un párrafo de ejemplo, cuando presiones el botón "slideDown", 
+                          desaparecerá mediante el efecto slide, si presionas el botón "slideUp", volverá a aparecer.<br>
+                          Este es un párrafo de ejemplo, cuando presiones el botón "slideDown", 
+                          desaparecerá mediante el efecto slide, si presionas el botón "slideUp", volverá a aparecer.<br>
+                          Este es un párrafo de ejemplo, cuando presiones el botón "slideDown", 
+                          desaparecerá mediante el efecto slide, si presionas el botón "slideUp", volverá a aparecer.<br>
+                          Este es un párrafo de ejemplo, cuando presiones el botón "slideDown", 
+                          desaparecerá mediante el efecto slide, si presionas el botón "slideUp", volverá a aparecer.<br>
+                        </p>
+                      <a href="#" class="btn btn-outline-dark btn-sdown">slideDown</a>
+                      <a href="#" class="btn btn-dark btn-sup">slideUp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Mi Script -->
+    <script src="assets/script/script.js"></script>
+</body>
+</html>

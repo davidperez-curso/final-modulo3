@@ -1,0 +1,51 @@
+body {
+    font-family: 'Roboto Mono';
+    font-weight: 300;
+}
+
+.img-toggle, .img-fade, .focus-card, .hideshow-card, .data-card {
+    width: 45em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+@media screen and (min-width: 760px){
+    
+    input {
+    display:none;
+    }
+    label {
+    display: none;
+    }
+
+}
+
+@media screen and (max-width: 758px){
+
+    .img-toggle, .data-card, .img-fade, .focus-card, .hideshow-card {
+        width: 18em;
+    }
+    .img-toggle img {
+        width: 18em;
+    }
+
+    .img-fade img {
+        width: 18em;
+    }
+
+    .nav {
+        display: none;
+    }
+    input:checked ~ .nav{
+        display: block;
+    }
+    input{
+        display: none;
+    }
+    label {
+        user-select: none;
+    }
+    
+}
